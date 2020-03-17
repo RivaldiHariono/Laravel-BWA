@@ -54,10 +54,9 @@ class ProductController extends Controller
         if($price_to){
             $product->where('price', '<=', $price_to);
         }
-    
+        
         return ResponseFormatter::success(
-            $product->paginate($limit),
-            'Data berhasil diambil'
+            $product->paginate(),'Data berhasil diambil'
         );
 
     }
